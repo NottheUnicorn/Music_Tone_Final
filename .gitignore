@@ -1,0 +1,11 @@
+.idea
+.DS_Store
+
+/.env.docker
+/docker-compose.override.yaml
+/docker-compose.override.yml
+/docker/nginx/certs/
+
+###> django ###
+/static
+###< django ###

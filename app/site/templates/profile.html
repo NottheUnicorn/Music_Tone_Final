@@ -1,0 +1,58 @@
+{% extends 'base_template.html' %}
+
+{% block content %} 
+    <section class="bg-dark text-light text-center shadow mb-20">
+        <div class="container p-5 bg-dark">
+            <div class="row">
+                <div class="d-md-flex bg-dark align-items-center justify-content-evenly">
+                    <h1 class="col text-center">{{ current_user.name }}'s user profile</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center">
+    <div class="container p-10">
+        <div class="row"><br>
+            <h3 class="p-5">Here are your Scratch Song Details</h3>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Guitar</th>
+                    <th>Amp</th>
+                    <th>Pedals</th>
+                    <th>Style</th>
+                    <th>Groove</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for song in songs %}
+                <tr>
+                    <td>{{ song.name }}</td>
+                    <td>{{ song.guitar }}</td>
+                    <td>{{ song.amp }}</td>
+                    <td>{{ song.pedals }}</td>
+                    <td>{{ song.style }}</td>
+                    <td>{{ song.groove }}</td>
+                    <td>
+                        <a href="{{ url_for('site.songEdit', id=song.id) }}" class="btn btn-info">Edit</a>
+                        <a href="{{ url_for('site.songRemove', id=song.id) }}" class="btn btn-danger">Remove</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <a href="{{ url_for('site.songAdd') }}" class="btn btn-primary">Add</a>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-4"></div>
+            <div class="col-3 p-10">
+                <img src="../static/images/replac.jpg" class="d-flex align-items-center justify-content-center p-50 img-fluid" alt="">
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+
+{% block title %}Edit your song{% endblock %}
+
+{% block content %}
+{% if error %}
+<p style="color: red;"><strong>Error:</strong> {{ error }}
+    {% endif %}
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.name.label }}
+        {{ form.name(size=64) }}
+        <br>
+        {% for error in form.name.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.guitar.label }}
+        {{ form.guitar(size=64) }}
+        <br>
+        {% for error in form.guitar.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.amp.label }}
+        {{ form.amp(size=64) }}
+        <br>
+        {% for error in form.amp.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.pedals.label }}
+        {{ form.pedals(size=64) }}
+        <br>
+        {% for error in form.pedals.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.style.label }}
+        {{ form.style(size=64) }}
+        <br>
+        {% for error in form.style.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.groove.label }}
+        {{ form.groove(size=64) }}
+        <br>
+        {% for error in form.groove.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.submit() }}
+    </div>
+</form>
+{% endblock %}

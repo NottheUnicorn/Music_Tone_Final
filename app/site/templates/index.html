@@ -1,0 +1,58 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+<div class="row content">
+    <div class="col-sm-2 sidenav">
+        <nav class="navbar navbar-light bg-light">
+            <br>
+            <br>
+            <br>
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <img src="/static/images/silvsky.webp" width="100%" alt="">
+                </a>
+            </nav>
+        </nav>
+    </div>
+    <div class="col-sm-8 text-left">
+        <h1>Remember the tones you create</h1>
+        <p></p>
+        <hr>
+        <h3>Here at Music is Cool</h3>
+        <p>We love to play music. Rock, Jazz, RnB, Rap, Punk, Metal, ambient, Shoegaze. Whatever type of music you can
+            think of, we are down to jam. However sometimes when you're jamming you get caught up in the groove and music
+            and forget different jams, progressions, licks, solos, rhythyms. So why not try to write them down so you never forget them.
+            Arranging music is hard and it is especially hard when you try to keep it all in your head.
+            <br>
+            <br>
+        <p>So with this Website we are going to try to allow you to record that amazing riff that you can't remember what key
+            you were in or that bVI chord that shouldn't work in your progrssion but sounds amazing.
+        </p>
+        <div id="flex-container">
+            <div>
+                <img align="right" src="/static/images/nirv.jpg" width="55%" top="-150px" alt="">
+            </div>
+            <div>
+                <a href="{{ url_for('site.songTracks', artist_name='Gary Clark Jr') }}">
+                    <img src="/static/images/clark.jpg" class="center" alt="">
+                    <p>Gary Clark Jr.</p>
+                </a>
+            </div>
+            <div>
+                <a href="{{ url_for('site.songTracks', artist_name='Jerry Garcia') }}">
+                    <img src="/static/images/garcia.jpg" class="center" alt="">
+                    <p>Jerry Garcia</p>
+                </a>
+            </div>
+            <div>
+                <a href="{{ url_for('site.songTracks', artist_name='Prince') }}">
+                    <img src="/static/images/prnc.jpg" class="center" alt="">
+                    <p>Prince</p>
+                </a>
+            </div>
+                
+            <img align="right" src="/static/images/replac.jpg" width="50%" top="-10px" alt="">
+        </div>
+    </div>
+</div>
+{% endblock %}
